@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, session, flash
 from flask_mysqldb import MySQL
+import os
 
 app = Flask(__name__)
 app.secret_key = "student123"
@@ -7,11 +8,10 @@ app.secret_key = "student123"
 # -----------------------------
 # MySQL Configuration
 # -----------------------------
-app.config["MYSQL_HOST"] = "localhost"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] ="Mysql@123"   # MySQL password unte ikkada pettu
-app.config["MYSQL_DB"] = "student_db"
-
+app.config["MYSQL_HOST"] = os.environ.get("MYSQL_HOST")
+app.config["MYSQL_USER"] = os.environ.get("MYSQL_USER")
+app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD")
+app.config["MYSQL_DB"] = os.environ.get("MYSQL_DB")
 mysql = MySQL(app)
 
 # -----------------------------
