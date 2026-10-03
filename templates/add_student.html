@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="login-box">
+
+<h2>Add Student</h2>
+
+<form method="POST">
+
+<input type="text" name="name" placeholder="Student Name" required>
+
+<input type="text" name="roll_no" placeholder="Roll Number" required>
+
+<select name="department" required>
+    <option value="">Select Department</option>
+    <option value="ECE">ECE</option>
+    <option value="CSE">CSE</option>
+    <option value="EEE">EEE</option>
+    <option value="MECH">MECH</option>
+    <option value="CIVIL">CIVIL</option>
+</select>
+
+<select name="student_type" required>
+    <option value="">Student Type</option>
+    <option value="Hosteler">Hosteler</option>
+    <option value="Day Scholar">Day Scholar</option>
+</select>
+
+<br><br>
+
+<button type="submit">Add Student</button>
+
+</form>
+
+<br>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
